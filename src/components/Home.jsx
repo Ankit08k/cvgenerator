@@ -21,7 +21,7 @@ const Home = () => {
       education: "BCA , IGNOU 7.0 CGPA",
       experience:
         "DM Software 2022 - 2023 Wordpress DeveloperGained hands-on experience in wordpress technology, Elementor, WP bakery, Divi themes, Woocommerce and Exploredmany related plugins. Worked on more than 40 projects including informative, e-commerce functionalities, LMS Functionality etc.",
-      project: "News Website, using React.js <br> Instagram Clone",
+      project1: "News Website, using React.js <br> Instagram Clone",
       skills:
         "Technical Skills: React.js, HTML, CSS, Javascript, Bootstrap, Figma, Wordpress, SQL, MongoDB, Git. Soft Skills : Leadership, Communication, Teamwork, Analytical thinking ,Problem Solving",
       university: "Ignou",
@@ -41,7 +41,6 @@ const Home = () => {
     email: "",
     education: "",
     experience: "",
-    project: "",
     skills: "",
     university: "",
     phone: "",
@@ -50,6 +49,7 @@ const Home = () => {
     url2: "",
     url3: "",
     url4: "",
+    project1: "",
   });
 
   const name = watch("name");
@@ -58,13 +58,14 @@ const Home = () => {
   const education = watch("education");
   const phone = watch("phone");
   const experience = watch("experience");
-  const project = watch("project");
+  const project1 = watch("project1");
   const skills = watch("skills");
   const university = watch("university");
   const url1 = watch("url1");
   const url2 = watch("url2");
   const url3 = watch("url3");
   const url4 = watch("url4");
+  // const project1 = watch("project1");
 
   const getValue = (value) => {
     setValue(value);
@@ -297,7 +298,7 @@ const Home = () => {
                 {/* <input {...register(`test.${index}.url`)} /> */}
                 <input
                   type="url"
-                  className={`form-control ${errors.url ? "is-invalid" : ""}`}
+                  className={`form-control ${errors.url4 ? "is-invalid" : ""}`}
                   {...register(`test.${index}.url4`)}
                   placeholder="Any other links"
                 />{" "}
@@ -330,7 +331,7 @@ const Home = () => {
               className="btn btn-primary w-100"
               style={{ backgroundColor: "#6a11cb", border: "none" }}
               type="button"
-              onClick={() => append({ url4: "" })}
+              onClick={() => append({ project1: "" })}
             >
               Add Link
             </button>
@@ -468,14 +469,10 @@ const Home = () => {
             <label className="form-label">Projects</label>
             <input
               type="text"
-              className={`form-control ${
-                errors.projectFields ? "is-invalid" : ""
-              }`}
+              className={`form-control ${errors.project1 ? "is-invalid" : ""}`}
             />
             {errors.university && (
-              <div className="invalid-feedback">
-                {errors.projectFields.message}
-              </div>
+              <div className="invalid-feedback">{errors.project1.message}</div>
             )}
           </div>
 
@@ -503,21 +500,13 @@ const Home = () => {
                 >
                   <path d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z" />
                 </svg>
-                {/* <button
-                  type="button"
-                  className="btn btn-primary w-40"
-                  style={{ backgroundColor: "#DC143C", border: "none" }}
-                  onClick={() => remove(index)}
-                >
-                  Delete
-                </button> */}
               </div>
             ))}
             <button
               className="btn btn-primary w-100"
               style={{ backgroundColor: "#6a11cb", border: "none" }}
               type="button"
-              onClick={() => projectAppend({ project: "" })}
+              onClick={() => projectAppend({ project4: "" })}
             >
               Add Project
             </button>
@@ -565,7 +554,15 @@ const Home = () => {
         </form>
       </div>
 
-      <div style={{ flex: 1, border: "1px solid #ccc", padding: "10px" }}>
+      <div
+        style={{
+          flex: 3,
+          border: "1px solid #ccc",
+          padding: "100px",
+          margin: "100px",
+          marginBottom: "px",
+        }}
+      >
         <h2>Live Resume Preview</h2>
         <h3>{name || "Your Name"}</h3>
         <p>{email || "your.email@example.com"}</p>
@@ -574,6 +571,8 @@ const Home = () => {
         <p>{url1 || "Linkedin..."}</p>
         <p>{url2 || "Github..."}</p>
         <p>{url3 || "Twitter..."}</p>
+        <p>{url4 || "New Link..."}</p>
+
         <h4>Summary</h4>
         <p>{summary || "A brief summary about yourself..."}</p>
         <h4>Education</h4>
@@ -581,7 +580,9 @@ const Home = () => {
         <h4>Experience</h4>
         <p>{experience || "Your work experience goes here..."}</p>
         <h4>Projects</h4>
-        <p>{project || "List your skills here..."}</p>
+        {/* <p>{project || "List your skills here..."}</p> */}
+        <p>{project1 || "List your skills here..."}</p>
+
         <h4>Skills</h4>
         <p>{skills || "List your skills here..."}</p>
         <h4>University</h4>
