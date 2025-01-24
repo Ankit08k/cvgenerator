@@ -1,3 +1,8 @@
+.main-content {
+  margin-left: 250px; /* This is to make space for the sidebar */
+  padding: 20px;
+}
+
 .App {
   text-align: center;
 }
@@ -41,4 +46,42 @@
   color: #999;
   font-weight: 50;
   display: inline-block;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+h1 {
+  text-align: center;
+  color: #4a4a4a;
+}
+.section {
+  margin: 10px 0;
+}
+.heading {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.heading1 {
+  color: #999;
+  font-weight: 50;
+  display: inline-block;
+}
+
+.heading3 {
+  letter-spacing: 2px;
+  color: #54afe4;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.name {
+  font-weight: 300;
+}
+.section2 {
+  display: inline;
 }
